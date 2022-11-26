@@ -5,6 +5,28 @@ function calculateRandomNumber(min, max) {
     return randomNumber;
 }
 
+// Genera nuevos estudiantes de forma aleatoria
+function generateRandomStudent() {
+    const newStudent = {
+        age: 0,
+        name: '',
+        gender: '',
+        examScores: []
+    }
+
+    const randomGender = calculateRandomNumber(0, 1);
+    if (randomGender === 0) {
+        newStudent.name = availableMaleNames[calculateRandomNumber(0, availableMaleNames.length -1)];
+    } else {
+        newStudent.name = availableFemaleNames[calculateRandomNumber(0, availableFemaleNames.length -1)];
+    }
+
+    newStudent.age = calculateRandomNumber(20, 25);
+    newStudent.gender = availableGenders[randomGender];
+
+    return newStudent;
+}
+
 export function showMenu() {
     const menu = [{
         option: "1",
@@ -106,24 +128,53 @@ export function optionFive() {
     console.log('Un alumno ha sido eliminado de la clase aleatoriamente');
 }
 
+// Muestra por consola todos los datos de los alumnos que son chicas
 export function optionSix() {
-    console.log('Has seleccionado la opción 6');
+    const femaleStudents = students.filter((filteredFemale) => {
+        return filteredFemale.gender === 'female'
+    });
+
+    console.table(femaleStudents);
 }
 
+// Muestra por consola el número de chicos y chicas que hay en la clase
 export function optionSeven() {
-    console.log('Has seleccionado la opción 7');
+    const femaleStudents = students.filter((filteredFemale) => {
+        return filteredFemale.gender === 'female'
+    });
+
+    const maleStudents = students.filter((filteredMale) => {
+        return filteredMale.gender === 'male'
+    });
+
+    console.log('En la clase hay', maleStudents.length, 'chicos y', femaleStudents.length, 'chicas');
 }
 
+// Muestra true o false por consola si todos los alumnos de la clase son chicas
 export function optionEight() {
-    console.log('Has seleccionado la opción 8');
+    const maleStudents = students.some(student => student.gender === 'male');
+    console.log(!maleStudents);
 }
 
+// Muestra por consola los nombres de aquellos alumnos que tengan entre 20 y 25 años
 export function optionNine() {
-    console.log('Has seleccionado la opción 9');
+    const ageRange = students.filter((filterStudent) => {
+        return filterStudent.age >= 20 && filterStudent.age <= 25;
+    });
+
+    console.log('Los alumnos que tienen entre 20 y 25 años son: ')
+
+    ageRange.forEach((item) => {
+        console.log(item.name)
+    });
 }
 
+// Añade un nuevo alumno con: NOMBRE ALEATORIO, EDAD ENTRE 20 y 25 años, GENERO ALEATORIO, CALIFICACIONES VACÍAS.
 export function optionTen() {
-    console.log('Has seleccionado la opción 10');
+    const newStudent = generateRandomStudent();
+    students.push(newStudent);
+    console.log('Se ha añadido un nuevo alumno a la clase. Estos son sus datos:')
+    console.table(newStudent);
 }
 
 export function optionEleven() {
