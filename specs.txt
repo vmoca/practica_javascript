@@ -14,13 +14,13 @@ TO DO:
 - DONE **- Crear switch con todos los casos contemplados (del 1 al 15) y sus breaks.
 - DONE **- Pedir por consola al usuario que introduzca el número del requisito a ejecutar.
 - DONE **- Finalizar el programa si el usuario introduce el valor 0 o un valor superior a 15 o un caracter o letra.
-- Crear Función Opción 1 - Muestra por consola en formato de tabla el array de los alumnos, con todos los alumnos. 
-- Crear Función Opción 2 - Suma de el número de alumnos, total de elemntos del array.
-- Crear Función Opción 3 - Muestra por consola el atributo nombre de todos los elementos del array de alumnos.
-- Crear Función Opción 4 - Elimina el último alumno del array de alumnos (pop)
-- Crear Función Opción 5 - Elimina un alumno aleatoriamente de la clase:
-    - Generar un número aleatorio entre el min length y el max length del array.
-    - Eliminarlo con splice ??. 
+- DONE **- Crear Función Opción 1 - Muestra por consola en formato de tabla el array de los alumnos, con todos los alumnos. 
+- DONE **- Crear Función Opción 2 - Suma de el número de alumnos, total de elemntos del array.
+- DONE **- Crear Función Opción 3 - Muestra por consola el atributo nombre de todos los elementos del array de alumnos.
+- DONE **- Crear Función Opción 4 - Elimina el último alumno del array de alumnos (pop)
+- DONE **- Crear Función Opción 5 - Elimina un alumno aleatoriamente de la clase:
+    - DONE **- Generar un número aleatorio entre el min length y el max length del array.
+    - DONE **- Eliminarlo con splice ??. 
 - Crear Función Opción 6 - Muestra por consola todos los datos de los alumnos que son chicas. 
     - Seleccionar elementos de array que tengan "gender" female y mostrar todos sus datos. 
 - Crear Función Opción 7 - Muestra por consola el Nº total de chicos y el Nº total de chicas.

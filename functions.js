@@ -1,5 +1,10 @@
 import { students, availableMaleNames, availableFemaleNames, availableGenders } from "./utilities.js";
 
+function calculateRandomNumber(min, max) {
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    return randomNumber;
+}
+
 export function showMenu() {
     const menu = [{
         option: "1",
@@ -65,24 +70,40 @@ export function showMenu() {
     console.table(menu);
 }
 
+// Muestra en formato tabla todos los alumnos de la clase
 export function optionOne() {
     console.table(students);
 }
 
+// Muestra la cantidad de alumnos en la clase
 export function optionTwo() {
-    console.log('Has seleccionado la opción 2');
+    console.log(`Hay un total de ${students.length} alumnos en clase`);
 }
 
+// Muestra por consola todos los nombres de los alumnos
 export function optionThree() {
-    console.log('Has seleccionado la opción 3');
+    let names = []
+
+    students.forEach((e) => {
+        names.push(e.name)
+    } )
+    console.log('Los nombres de los alumnos de la clase son:', names.join(', '))
 }
 
+// Elimina el último alumno de la clase
 export function optionFour() {
-    console.log('Has seleccionado la opción 4');
+    students.pop();
+    console.log('Se ha eliminado el último alumno de la clase');
 }
 
+// Elimina un alumno aleatoriamente de la clase
 export function optionFive() {
-    console.log('Has seleccionado la opción 5');
+    const MIN = 0;
+    const MAX = students.length;
+
+    const randomStudent = calculateRandomNumber(MIN, MAX);
+    const deleteRandomStudent = students.splice(randomStudent,1);
+    console.log('Un alumno ha sido eliminado de la clase aleatoriamente');
 }
 
 export function optionSix() {

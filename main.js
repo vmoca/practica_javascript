@@ -8,11 +8,12 @@ const rl = readline.createInterface({
 
 const isInt = (str) => {
     const integer = parseInt(str);
-    if (Number.isNaN(integer)) {
-      return false;
-    } else {
-      return true;
-    }
+    return !Number.isNaN(integer)
+    // if (Number.isNaN(integer)) {
+    //   return false;
+    // } else {
+    //   return true;
+    // }
 };
 
 showMenu();
@@ -20,13 +21,13 @@ showMenu();
 // productor
 function getNumberFromConsole() {
     const promise = new Promise((resolve, reject) => {
-      rl.question("Introduce el número: ", (num) => {
+      rl.question("Introduce el número de la funcionalidad a ejecutar: ", (num) => {
         rl.pause();
         if (isInt(num)) {
           num = Number.parseInt(num);
           resolve(num);
         } else {
-          reject("Has de introducir un número del 1 al 15");
+          reject("Debes introducir un número del 1 al 15");
         }
       });
     });
