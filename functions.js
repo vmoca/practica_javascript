@@ -66,7 +66,7 @@ export function showMenu() {
 }
 
 export function optionOne() {
-    console.log('Has seleccionado la opción 1');
+    console.table(students);
 }
 
 export function optionTwo() {
