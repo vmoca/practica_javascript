@@ -22,7 +22,7 @@ function getNumberFromConsole() {
           num = Number.parseInt(num);
           resolve(num);
         } else {
-          reject("Has introducido una opción incorrecta. Debes introducir un número del 1 al 18");
+          reject("Has introducido una opción incorrecta. Debes introducir un número del 1 al 17");
         }
       });
     });
@@ -95,11 +95,11 @@ async function executeApplication() {
             optionSeventeen();
             break;
         default:
-            console.log('Has introducido una opción incorrecta. Debes introducir un número del 1 al 18');
+            console.log('Has introducido una opción incorrecta. Debes introducir un número del 1 al 17');
             break;
       }
   
-    } while (numberFromConsole >= 1 && numberFromConsole <= 18); // condiciones para continuar ejecutando
+    } while (numberFromConsole >= 1 && numberFromConsole <= 17); // condiciones para continuar ejecutando
   }
   
   executeApplication();
