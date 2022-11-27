@@ -38,6 +38,7 @@ function getYoungestAge(studentList) {
     });
  }
 
+ // opciones del menú
 export function showMenu() {
     const menu = [{
         option: "1",
@@ -98,6 +99,14 @@ export function showMenu() {
     {
         option: "15",
         functionality: "Ordenar el array de alumnos alfabéticamente según su nombre"
+    },
+    {
+        option: "16",
+        functionality: "Mostrar por consola el alumno de la clase con las mejores notas"
+    },
+    {
+        option: "17",
+        functionality: "Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece"
     }];
 
     console.table(menu);
@@ -194,15 +203,6 @@ export function optionTen() {
 export function optionEleven() {
     const youngest = getYoungestAge(students) 
     console.log('La persona más joven de la clase es:', youngest.name);
-
-    // const min = Math.min(...students.map(student => student.age));
-    // const youngestStudent = students.filter(student => student.age == min)
-
-    // console.log('La persona más joven de la clase es:');
-
-    // youngestStudent.forEach((item) => {
-    //     console.log(item.name)
-    // });
 }
 
 // Muestra por consola la edad media de todos los alumnos de la clase
@@ -250,4 +250,29 @@ export function optionFifteen() {
       });
 
     console.table(students);
+}
+
+// Muestra por consola el alumno de la clase con las mejores notas
+export function optionSixteen() {
+    const bestStudent = students.map(student => ({
+            ...student,
+            averageScores: student.examScores.reduce((a, b) => a + b, 0) / student.examScores.length,
+        }))
+        .sort((a, b) => a.averageScores - b.averageScores)
+        .pop();
+
+        console.log('Este es el alumno con las mejores notas de clase:')
+        console.table(bestStudent);
+}
+
+// Muestra por consola la nota media más alta de la clase y el nombre del alumno al que pertenece
+export function optionSeventeen() {
+    const bestStudent = students.map(student => ({
+        ...student,
+        averageScores: student.examScores.reduce((a, b) => a + b, 0) / student.examScores.length,
+    }))
+    .sort((a, b) => a.averageScores - b.averageScores)
+    .pop();
+
+    console.log(bestStudent.name, 'es el alumno con la nota media más alta de la clase. \nSu nota media es:', bestStudent.averageScores)
 }

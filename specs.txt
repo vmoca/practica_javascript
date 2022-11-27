@@ -55,9 +55,9 @@ TO DO (Requisitos imprescindibles):
 TO DO (Requisitos opcionales):
 ***********
 
-- Crear Función Opción 16 - Mostrar por consola el alumno de la clase con las mejores notas.
+- DONE **- Crear Función Opción 16 - Mostrar por consola el alumno de la clase con las mejores notas.
     El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.
-- Crear Función Opción 17 - Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
+- DONE **- Crear Función Opción 17 - Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
 - Crear Función Opción 18 - Añadir un punto extra a cada nota existente de todos los alumnos. 
     - Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.
     - Suma un punto a cada nota que tengan con un máximo de 10. Si no tienen ninguna nota les ponemos un 10

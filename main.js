@@ -1,5 +1,5 @@
 import readline from "readline";
-import { showMenu, optionOne, optionTwo, optionThree, optionFour, optionFive, optionSix, optionSeven, optionEight, optionNine, optionTen, optionEleven, optionTwelve, optionThirteen, optionFourteen, optionFifteen } from "./functions.js";
+import { showMenu, optionOne, optionTwo, optionThree, optionFour, optionFive, optionSix, optionSeven, optionEight, optionNine, optionTen, optionEleven, optionTwelve, optionThirteen, optionFourteen, optionFifteen, optionSixteen, optionSeventeen } from "./functions.js";
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,11 +9,6 @@ const rl = readline.createInterface({
 const isInt = (str) => {
     const integer = parseInt(str);
     return !Number.isNaN(integer)
-    // if (Number.isNaN(integer)) {
-    //   return false;
-    // } else {
-    //   return true;
-    // }
 };
 
 showMenu();
@@ -27,7 +22,7 @@ function getNumberFromConsole() {
           num = Number.parseInt(num);
           resolve(num);
         } else {
-          reject("Debes introducir un número del 1 al 15");
+          reject("Has introducido una opción incorrecta. Debes introducir un número del 1 al 18");
         }
       });
     });
@@ -93,12 +88,18 @@ async function executeApplication() {
         case 15:
             optionFifteen();
             break;
+        case 16:
+            optionSixteen();
+            break;
+        case 17:
+            optionSeventeen();
+            break;
         default:
-            console.log('Has introducido una opción incorrecta. Debes introducir un número del 1 al 15');
+            console.log('Has introducido una opción incorrecta. Debes introducir un número del 1 al 18');
             break;
       }
   
-    } while (numberFromConsole >= 1 && numberFromConsole <= 15); // condiciones para continuar ejecutando
+    } while (numberFromConsole >= 1 && numberFromConsole <= 18); // condiciones para continuar ejecutando
   }
   
   executeApplication();
