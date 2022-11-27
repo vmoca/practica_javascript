@@ -6,10 +6,12 @@ Necesitamos desarrollar una aplicación hecha con javascript que nos ayude a ges
 Cada requisito tiene un número asignado. Cuando ejecutemos la aplicación, aparecerá el listado completo de requisitos. El usuario debe pulsar el número correspondiente a ese requisito para que se ejecute. Una vez la ejecución termine, volveremos a mostrar el listado de requisitos para que el usuario pueda seleccionar otro. En caso de que el usuario pulse el 0 o un número no contemplado, la aplicación terminará.
 */
 
+
 /*
 ***********
-TO DO:
+TO DO (Requisitos imprescindibles):
 ***********
+
 - DONE **- Crear array con el listado de requisitos y mostrarlo por consola en formato tabla.
 - DONE **- Crear switch con todos los casos contemplados (del 1 al 15) y sus breaks.
 - DONE **- Pedir por consola al usuario que introduzca el número del requisito a ejecutar.
@@ -21,28 +23,42 @@ TO DO:
 - DONE **- Crear Función Opción 5 - Elimina un alumno aleatoriamente de la clase:
     - DONE **- Generar un número aleatorio entre el min length y el max length del array.
     - DONE **- Eliminarlo con splice ??. 
-- Crear Función Opción 6 - Muestra por consola todos los datos de los alumnos que son chicas. 
-    - Seleccionar elementos de array que tengan "gender" female y mostrar todos sus datos. 
-- Crear Función Opción 7 - Muestra por consola el Nº total de chicos y el Nº total de chicas.
-- Crear Función Opción 8 - Muestra por consola "TRUE" o "FALSE" si todos los alumnos de la clase son chicas.
-    - Comprobar si el atributo "gender" de todos los elementos del array es female, si es así devuelvo TRUE, si no, devuelve FALSE.
-- Crear Función Opción 9 - Muestra por consola los nombres de los alumnos que tengan entre 20 y 25 años. 
-    - Seleccionar los elementos del array cuyo atributo "age" esté entre 20 y 25 años, ambos inclusive.
-- Crear Función Opción 10 - Añade al array de alumnos un nuevo alumno con los siguientes datos: 
-    *- nombre aleatorio.
-    *- edad aleatoria entre 20 y 50 años.
-    *- género aleatorio.
-    *- listado de calificaciones vacío.
+- DONE **- Crear Función Opción 6 - Muestra por consola todos los datos de los alumnos que son chicas. 
+    - DONE **- Seleccionar elementos de array que tengan "gender" female y mostrar todos sus datos. 
+- DONE **- Crear Función Opción 7 - Muestra por consola el Nº total de chicos y el Nº total de chicas.
+- DONE **- Crear Función Opción 8 - Muestra por consola "TRUE" o "FALSE" si todos los alumnos de la clase son chicas.
+    - DONE **- Comprobar si el atributo "gender" de todos los elementos del array es female, si es así devuelvo TRUE, si no, devuelve FALSE.
+- DONE **- Crear Función Opción 9 - Muestra por consola los nombres de los alumnos que tengan entre 20 y 25 años. 
+    - DONE **- Seleccionar los elementos del array cuyo atributo "age" esté entre 20 y 25 años, ambos inclusive.
+- DONE **- Crear Función Opción 10 - Añade al array de alumnos un nuevo alumno con los siguientes datos: 
+    - DONE ***- nombre aleatorio.
+    - DONE ***- edad aleatoria entre 20 y 50 años.
+    - DONE ***- género aleatorio.
+    - DONE ***- listado de calificaciones vacío.
     
-    El nombre y el genero tiene que ir acorde / Cómo?  --  ¿¿??
-- Crear Función Opción 11 - Muestra por consola el nombre del alumno más joven de clase. Si varias personas comparten edad más baja, cualquiera de ellos vale.
-    - Selecciona el elemento del array de alumnos cuyo atributo "age" sea menor.
-- Crear Función Opción 12 - Muestra por consola la edad media de todos los alumnos de clase.
-    - Sacar la media del atributo age de todos los elementos del array y mostrar por consola. 
-- Crear Función Opción 13 - Muestra por consola la edad media de las chicas de la clase. 
-    - Sacar media de el atrubuto age de aquellos elementos del array cuyo atributo gender sea === female. Mostrarlo por consola. 
-- Crear Función Opción 14 - Añade una nueva nota a los alumnos. Por cada alumno de clase. Para ello:
-    - Calcular nota aleatoria entre 0 y 10.
-    - Añadirla al listado de notas de cada alumno. 
-- Crear Función Opción 15 - Ordena el array de alumnos alfabeticamente, según su atributo "name".
+    - DONE **El nombre y el genero tiene que ir acorde / Cómo?  --  ¿¿??
+- DONE **- Crear Función Opción 11 - Muestra por consola el nombre del alumno más joven de clase. Si varias personas comparten edad más baja, cualquiera de ellos vale.
+    - DONE **- Selecciona el elemento del array de alumnos cuyo atributo "age" sea menor.
+- DONE **- Crear Función Opción 12 - Muestra por consola la edad media de todos los alumnos de clase.
+    - DONE **- Sacar la media del atributo age de todos los elementos del array y mostrar por consola. 
+- DONE **- Crear Función Opción 13 - Muestra por consola la edad media de las chicas de la clase. 
+    - DONE **- Sacar media de el atrubuto age de aquellos elementos del array cuyo atributo gender sea === female. Mostrarlo por consola. 
+- DONE **- Crear Función Opción 14 - Añade una nueva nota a los alumnos. Por cada alumno de clase. Para ello:
+    - DONE **- Calcular nota aleatoria entre 0 y 10.
+    - DONE **- Añadirla al listado de notas de cada alumno. 
+- DONE **- Crear Función Opción 15 - Ordena el array de alumnos alfabeticamente, según su atributo "name".
+*/
+
+
+/*
+***********
+TO DO (Requisitos opcionales):
+***********
+
+- Crear Función Opción 16 - Mostrar por consola el alumno de la clase con las mejores notas.
+    El alumno con mejores notas es aquel cuyo sumatorio de todas sus notas es el valor más alto de todos.
+- Crear Función Opción 17 - Mostrar por consola la nota media más alta de la clase y el nombre del alumno al que pertenece.
+- Crear Función Opción 18 - Añadir un punto extra a cada nota existente de todos los alumnos. 
+    - Recordad que la nota máxima posible es 10. Si los alumnos aún no tienen registrada ninguna nota, les pondremos un 10.
+    - Suma un punto a cada nota que tengan con un máximo de 10. Si no tienen ninguna nota les ponemos un 10
 */

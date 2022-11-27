@@ -27,6 +27,17 @@ function generateRandomStudent() {
     return newStudent;
 }
 
+// Saca la persona de menor edad
+function getYoungestAge(studentList) {
+    return studentList.reduce((min, student) => {
+        if (student.age <= min.age) {
+            return student;
+        } else {
+            return min;
+        }
+    });
+ }
+
 export function showMenu() {
     const menu = [{
         option: "1",
@@ -115,7 +126,8 @@ export function optionThree() {
 // Elimina el último alumno de la clase
 export function optionFour() {
     students.pop();
-    console.log('Se ha eliminado el último alumno de la clase');
+    console.log('Se ha eliminado el último alumno de la clase. \nEstos son los alumnos actuales:');
+    console.table(students);
 }
 
 // Elimina un alumno aleatoriamente de la clase
@@ -124,8 +136,9 @@ export function optionFive() {
     const MAX = students.length;
 
     const randomStudent = calculateRandomNumber(MIN, MAX);
-    const deleteRandomStudent = students.splice(randomStudent,1);
-    console.log('Un alumno ha sido eliminado de la clase aleatoriamente');
+    students.splice(randomStudent,1);
+    console.log('Un alumno ha sido eliminado de la clase aleatoriamente. \nEstos son los alumnos actuales:');
+    console.table(students);
 }
 
 // Muestra por consola todos los datos de los alumnos que son chicas
@@ -147,7 +160,7 @@ export function optionSeven() {
         return filteredMale.gender === 'male'
     });
 
-    console.log('En la clase hay', maleStudents.length, 'chicos y', femaleStudents.length, 'chicas');
+    console.log('Estos son los alumnos que hay en clase. \nChicos:', maleStudents.length, '\nChicas:', femaleStudents.length);
 }
 
 // Muestra true o false por consola si todos los alumnos de la clase son chicas
@@ -177,22 +190,64 @@ export function optionTen() {
     console.table(newStudent);
 }
 
+// Muestra por consola el nombre de la persona más joven de la clase
 export function optionEleven() {
-    console.log('Has seleccionado la opción 11');
+    const youngest = getYoungestAge(students) 
+    console.log('La persona más joven de la clase es:', youngest.name);
+
+    // const min = Math.min(...students.map(student => student.age));
+    // const youngestStudent = students.filter(student => student.age == min)
+
+    // console.log('La persona más joven de la clase es:');
+
+    // youngestStudent.forEach((item) => {
+    //     console.log(item.name)
+    // });
 }
 
+// Muestra por consola la edad media de todos los alumnos de la clase
 export function optionTwelve() {
-    console.log('Has seleccionado la opción 12');
+    const averageAge = students.reduce((sum, student) => sum + student.age, 0) / students.length;
+    console.log('La edad media de los alumnos de la clase es:', averageAge);
 }
 
+// Muestra por consola la edad media de las chicas de la clase
 export function optionThirteen() {
-    console.log('Has seleccionado la opción 13');
+    const studentsGirls = students.filter((filterStudent) => {
+        return filterStudent.gender === 'female';
+    });
+
+    const girlsAverageAge = studentsGirls.reduce((sum, student) => sum + student.age, 0) / studentsGirls.length;
+    console.log('La edad media de las chicas de la clase es:', girlsAverageAge);
 }
 
+// Añade una nueva nota a los alumnos de la clase, dicha nota ha de ser calculada de forma aleatoria (número entre 0 y 10)
 export function optionFourteen() {
-    console.log('Has seleccionado la opción 14');
+    const MIN = 0;
+    const MAX = 10;
+
+    students.forEach((student) => {
+        const randomScore = calculateRandomNumber(MIN, MAX);
+        student.examScores.push(randomScore);
+    });
+
+    console.log('Se ha añadido una nueva nota a cada alumno');
+    console.table(students);
 }
 
+// Ordena el array de alumnos alfabéticamente según su nombre
 export function optionFifteen() {
-    console.log('Has seleccionado la opción 15');
+    students.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+      
+        // para nombres que deben ser iguales
+        return 0;
+      });
+
+    console.table(students);
 }
